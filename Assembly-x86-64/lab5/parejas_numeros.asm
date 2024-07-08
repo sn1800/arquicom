@@ -9,19 +9,19 @@ section .text
 
 _start:
 
-mov rcx , 0 ; contador de iterador
-mov rbx , [A]; asignamos al registro rbx el valor de A
+mov ecx , 0 ; contador de iterador
+mov ebx , [A]; asignamos al registro rbx el valor de A
 
 loop:
-    mov rax , rbx ; rax = A
-    mul dword [NUMERO];rax= rax*NUMERO
-    cmp rax , [B]
+    mov eax , ebx ; eax = A
+    mul dword [NUMERO];eax= eax*NUMERO
+    cmp eax , [B]
     jg loop_end
 
     inc dword [CantParejas]
-    inc rbx
+    inc ebx
 
-    cmp rbx , [B]
+    cmp ebx , [B]
     jle loop
 
 loop_end:
