@@ -8,8 +8,6 @@ section .text
     global _start
 
 _start:
-
-mov ecx , 0 ; contador de iterador
 mov ebx , [A]; asignamos al registro rbx el valor de A
 
 loop:
