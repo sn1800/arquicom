@@ -11,6 +11,7 @@ _start:
 
 mov rcx , 0 ; contador de iterador
 mov rbx , [A]; asignamos al registro rbx el valor de A
+
 loop:
     mov rax , rbx ; rax = A
     mul dword [NUMERO];rax= rax*NUMERO
@@ -18,9 +19,9 @@ loop:
     jg loop_end
 
     inc dword [CantParejas]
-    inc rcx
+    inc rbx
 
-    cmp rcx , [B]
+    cmp rbx , [B]
     jle loop
 
 loop_end:
