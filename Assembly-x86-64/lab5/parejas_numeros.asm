@@ -1,7 +1,7 @@
 section .data
     A dd 1;valor del limite inferior
     B dd 20;valor del limite superior
-    NUMERO dd 1;valor del numero
+    NUMERO dd 3;valor del numero
 section .bss
     CantParejas resd 1 ; reservar 4 bytes para la cantidad de parejas
 section .text
@@ -12,8 +12,8 @@ _start:
 mov rcx , 0 ; contador de iterador
 mov rbx , [A]; asignamos al registro rbx el valor de A
 loop:
-    mov rax , rbx
-    mul dword [NUMERO];y= A*NUMERO
+    mov rax , rbx ; rax = A
+    mul dword [NUMERO];rax= rax*NUMERO
     cmp rax , [B]
     jg loop_end
 
